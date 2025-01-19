@@ -2,10 +2,11 @@ import { renderHome } from "./pages/home.js";
 import { renderAboutus } from "./pages/abouts.js";
 import { renderServices } from "./pages/services.js";
 import { renderLogin } from "./pages/login.js";
-import{renderAddExam} from './pages/addexam.js'
+import { renderAddExam } from "./pages/addexam.js";
 import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
-const appContent=document.getElementById('main-content');
+import { renderSidebar } from "./components/sidebar.js";
+const appContent = document.getElementById("main-content");
 const routes = {
   "#/": renderHome,
   "#/service": renderServices,
@@ -42,9 +43,10 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-//   renderHeader();
+  //   renderHeader();
+  renderSidebar();
   loadRoute(window.location.hash);
-//   renderFooter();
+  //   renderFooter();
 });
 
 window.addEventListener("hashchange", () => {
