@@ -1,0 +1,3 @@
+export function renderExams(mainContent){
+
+}

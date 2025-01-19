@@ -1,4 +1,10 @@
 import { renderHome } from "./pages/home.js";
+import { renderAboutus } from "./pages/abouts.js";
+import { renderServices } from "./pages/services.js";
+import { renderLogin } from "./pages/login.js";
+import{renderAddExam} from './pages/addexam.js'
+import { renderExams } from "./pages/exams.js";
+import { renderForgetPassword } from "./pages/forgetPassword.js";
 const appContent=document.getElementById('main-content');
 const routes = {
   "#/": renderHome,
@@ -7,7 +13,6 @@ const routes = {
   "#/exams": renderExams,
   "#/addExam": renderAddExam,
   "#/login": renderLogin,
-  "#/signup": renderSignup,
   "#/forgetPassword": renderForgetPassword,
   404: () => (appContent.innerHTML = `<h2>404 - page not found</h2>`),
 };
