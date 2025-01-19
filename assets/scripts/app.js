@@ -1,8 +1,11 @@
+import { renderHome } from "./pages/home.js";
+const appContent=document.getElementById('main-content');
 const routes = {
   "#/": renderHome,
-  "#/products": renderProducts,
-  "#/products/:id": renderProduct,
-  "#/cart": renderCart,
+  "#/service": renderServices,
+  "#/aboutus": renderAboutus,
+  "#/exams": renderExams,
+  "#/addExam": renderAddExam,
   "#/login": renderLogin,
   "#/signup": renderSignup,
   "#/forgetPassword": renderForgetPassword,
@@ -14,9 +17,9 @@ function loadRoute(hash) {
   const path = hash || window.location.hash || "#/";
 
   if (path.startsWith("#/products/")) {
-    const productId = hash.split("#/products/")[1];
-    if (productId) {
-      renderProduct(productId);
+    const examId = hash.split("#/exams/")[1];
+    if (examId) {
+      renderExam(productId);
       return;
     }
   }
@@ -34,9 +37,9 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderHeader();
+//   renderHeader();
   loadRoute(window.location.hash);
-  renderFooter();
+//   renderFooter();
 });
 
 window.addEventListener("hashchange", () => {
