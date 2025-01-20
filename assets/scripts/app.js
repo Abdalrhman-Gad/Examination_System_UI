@@ -6,14 +6,16 @@ import { renderAddExam } from "./pages/addexam.js";
 import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
-const appContent = document.getElementById("main-content");
+
+const appContent = document.getElementById("main-page");
+
 const routes = {
-  "#/": renderHome,
+  "#/": renderLogin,
   "#/service": renderServices,
   "#/aboutus": renderAboutus,
   "#/exams": renderExams,
   "#/addExam": renderAddExam,
-  "#/login": renderLogin,
+  "#/home": renderHome,
   "#/forgetPassword": renderForgetPassword,
   404: () => (appContent.innerHTML = `<h2>404 - page not found</h2>`),
 };
@@ -44,7 +46,7 @@ document.addEventListener("click", (e) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   //   renderHeader();
-  renderSidebar();
+  //renderSidebar();
   loadRoute(window.location.hash);
   //   renderFooter();
 });

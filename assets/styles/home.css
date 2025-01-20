@@ -1,4 +1,11 @@
-*{
+:root {
+    --primary-color: #1C59A1;
+    --secondary-color: #EEEEEE;
+    --font-size: 16px;
+    --padding: 10px;
+}
+
+* {
     padding: 0;
     margin: 0;
     background-color: red;

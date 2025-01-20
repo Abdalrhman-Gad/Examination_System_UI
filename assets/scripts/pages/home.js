@@ -1,1 +1,4 @@
-export function renderHome(mainContent) {}
+export function renderHome(mainContent) {
+  mainContent.hidden = false;
+  
+}
