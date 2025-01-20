@@ -7,23 +7,41 @@
 
     <title>HOME</title>
 </head>
+<style>
+    .main-page{
+        display: flex;
+        width: 100%;
+    }
+    #sidebar{
+        width: 100%;
+    }
+    .main{
+        background-color: red;
+        width: 100vw;
+    }
+</style>
 
 <body>
+
     <!-- Sidebar Section -->
-    <div id="sidebar"></div>
+      <div class="container w-100 vh-100 bg-red">
+        <div id="sidebar"></div>
 
-    <!-- Header Section -->
-    <header id="header">text</header>
+        <div class="main">
+            <header id="header">text</header>
 
-
-
-    <!-- Main Content -->
-    <main id="main-content">
-        text
-    </main>
-
-    <!-- Footer Section -->
-    <footer id="footer"></footer>
+            <!-- Main Content -->
+            <main id="main-content">
+                text
+            </main>
+        </div>
+        <!-- Header Section -->
+       
+    
+        <!-- Footer Section -->
+        <footer id="footer"></footer>
+     </div>
+  
 
 
     <script type="module" src="./assets/scripts/app.js"></script>
