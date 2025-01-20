@@ -29,6 +29,7 @@ function loadRoute(hash) {
     document.getElementById("login-page").style.display = "block";//should ask to ensure the type of display
     document.getElementById("main-page").style.display = "none";
   }
+  renderSidebar();
   appContent.innerHTML = "";
 
   const path = hash || window.location.hash || "#/";
