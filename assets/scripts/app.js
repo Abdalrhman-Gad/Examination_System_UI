@@ -7,7 +7,7 @@ import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
 
-const appContent = document.getElementById("main-page");
+const appContent = document.getElementById("main-content");
 
 const routes = {
   "#/": renderLogin,
@@ -21,7 +21,16 @@ const routes = {
 };
 
 function loadRoute(hash) {
+  if (hash != "") {
+    document.getElementById("login-page").style.display = "none";
+    document.getElementById("main-page").style.display = "flex";
+  }
+  else {
+    document.getElementById("login-page").style.display = "block";//should ask to ensure the type of display
+    document.getElementById("main-page").style.display = "none";
+  }
   appContent.innerHTML = "";
+
   const path = hash || window.location.hash || "#/";
 
   if (path.startsWith("#/products/")) {
@@ -52,5 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("hashchange", () => {
+  debugger;
   loadRoute(window.location.hash);
 });
