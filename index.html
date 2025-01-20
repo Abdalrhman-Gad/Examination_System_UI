@@ -8,41 +8,32 @@
     <title>HOME</title>
 </head>
 <style>
-    .main-page{
-        display: flex;
-        width: 100%;
-    }
-    #sidebar{
-        width: 100%;
-    }
-    .main{
-        background-color: red;
-        width: 100vw;
-    }
+
 </style>
 
 <body>
 
-    <!-- Sidebar Section -->
-      <div class="container w-100 vh-100 bg-red">
-        <div id="sidebar"></div>
+    <div class="row p-0 m-0">
+        <div class="col-2 bg-danger p-0 m-0">
+            <!-- Sidebar Section -->
+            <div id="sidebar" class="w-100"></div>
 
-        <div class="main">
-            <header id="header">text</header>
-
-            <!-- Main Content -->
-            <main id="main-content">
-                text
-            </main>
         </div>
-        <!-- Header Section -->
-       
-    
-        <!-- Footer Section -->
-        <footer id="footer"></footer>
-     </div>
-  
+        <div class="col-10 bg-secondary">
+            <div class="row bg-danger" style="height: 10vh;">
+                <!-- Header section -->
+                <header id="header"></header>
+            </div>
 
+            <div class="row bg-black" style="height: 90vh;">
+                <!-- Main Content -->
+                <main id="main-content"></main>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer id="footer"></footer>
 
     <script type="module" src="./assets/scripts/app.js"></script>
     <script src="./vendor/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
