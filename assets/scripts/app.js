@@ -12,7 +12,7 @@ const appContent = document.getElementById("main-content");
 
 const routes = {
   "#/": renderLogin,
-  "#/service": renderServices,
+  "#/services": renderServices,
   "#/aboutus": renderAboutus,
   "#/exams": renderExams,
   "#/addExam": renderAddExam,

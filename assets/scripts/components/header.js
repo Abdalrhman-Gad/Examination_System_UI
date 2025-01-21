@@ -9,13 +9,28 @@ export function renderHeader() {
   style="width: 50px"
 />
 <div class="links">
-  <a class="navbar-brand" href="/">Home</a>
-  <a class="navbar-brand" href="/">Services</a>
-  <a class="navbar-brand" href="/">About Us</a>
+  <a class="navbar-brand" href="/" id="home">Home</a>
+  <a class="navbar-brand" id="services" href="/">Services</a>
+  <a class="navbar-brand" id ="about" href="/">About Us</a>
 </div>
 <div class="rounded-circle bg-black" style="width: 50px; height: 50px;">
 
 </div>
-
 </nav>`;
+
+
+document.getElementById("home").addEventListener('click',(event)=>{
+    event.preventDefault();
+    event.target.href="/home"
+})
+
+document.getElementById("services").addEventListener('click',(event)=>{
+    event.preventDefault();
+    event.target.href="/services"
+})
+document.getElementById("home").addEventListener('click',(event)=>{
+    event.preventDefault();
+    event.target.href="/aboutus"
+})
+
 }
