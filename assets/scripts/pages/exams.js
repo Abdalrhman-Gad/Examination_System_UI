@@ -15,4 +15,5 @@ export function renderExams(mainContent) {
     examCardsContainer.appendChild(element);
   }
   mainContent.appendChild(examCardsContainer);
+  //gad branch changed
 }
