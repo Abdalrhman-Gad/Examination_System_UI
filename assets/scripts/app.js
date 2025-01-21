@@ -6,6 +6,7 @@ import { renderAddExam } from "./pages/addexam.js";
 import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
+import { renderHeader } from "./components/header.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -24,11 +25,11 @@ function loadRoute(hash) {
   if (hash != "") {
     document.getElementById("login-page").style.display = "none";
     document.getElementById("main-page").style.display = "flex";
-  }
-  else {
-    document.getElementById("login-page").style.display = "block";//should ask to ensure the type of display
+  } else {
+    document.getElementById("login-page").style.display = "flex"; //should ask to ensure the type of display
     document.getElementById("main-page").style.display = "none";
   }
+  renderHeader();
   renderSidebar();
   appContent.innerHTML = "";
 
@@ -55,13 +56,9 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  //   renderHeader();
-  //renderSidebar();
   loadRoute(window.location.hash);
-  //   renderFooter();
 });
 
 window.addEventListener("hashchange", () => {
-  debugger;
   loadRoute(window.location.hash);
 });
