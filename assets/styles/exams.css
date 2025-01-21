@@ -1,0 +1,12 @@
+#container {
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    display: flex;
+
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line */
+    gap: 35px;
+    /* Optional: Adds space between items */
+    flex-direction: row;
+    /* Align items in the x-axis (default for flexbox) */
+}
