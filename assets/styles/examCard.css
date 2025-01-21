@@ -1,0 +1,16 @@
+.exam-container {
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.exam-container:hover {
+    transform: translateY(-5px);
+    /* Slight lift on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    /* Enhanced shadow */
+}
+
+.exam-container img {
+    padding: 0;
+    margin: 0;
+}
