@@ -17,20 +17,4 @@ export function renderHeader() {
 
 </div>
 </nav>`;
-
-
-document.getElementById("home").addEventListener('click',(event)=>{
-    event.preventDefault();
-    event.target.href="/home"
-})
-
-document.getElementById("services").addEventListener('click',(event)=>{
-    event.preventDefault();
-    event.target.href="/services"
-})
-document.getElementById("home").addEventListener('click',(event)=>{
-    event.preventDefault();
-    event.target.href="/aboutus"
-})
-
 }
