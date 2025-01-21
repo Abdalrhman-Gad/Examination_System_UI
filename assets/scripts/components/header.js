@@ -1,6 +1,6 @@
 export function renderHeader() {
   const HEADER = document.getElementById("header");
-  HEADER.innerHTML = `<nav class="navbar  m-0 w-100 ">
+  HEADER.innerHTML = `<nav class="navbar  m-0 w-100  px-5">
 <input
   class="form-control me-2 w-25 m-0"
   type="search"
@@ -22,15 +22,23 @@ export function renderHeader() {
     event.preventDefault();
     
     window.location.hash = "#/home";
+
+    window.location.reload();
+
   });
 
+ 
   document.getElementById("services").addEventListener("click", (event) => {
     event.preventDefault();
     window.location.hash = "#/services";
+   
+
 
   });
   document.getElementById("about").addEventListener("click", (event) => {
     event.preventDefault();
     window.location.hash = "#/aboutus";
+   
+
   });
 }

@@ -67,6 +67,7 @@ export function renderLogin(mainContent) {
     }
 
     window.location.hash = "#/home";
+    window.location.reload();
     // If both validations pass, log a success message (or handle form submission)
     alert("Login successful!");
     // Here you can submit the form to a server or proceed with further actions.
