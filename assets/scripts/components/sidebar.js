@@ -9,15 +9,21 @@ export function renderSidebar(mainContent) {
         <div class="d-flex sidebar d-flex flex-column justify-content-center 
                     align-items-center text-white h-75">
             <a id="exams-btn" href="#/exams" class="text-white fw-bold fs-5 py-3 text-center w-100">Exams</a>
-            <a id="add-exam-btn" href="#/addExam" class="text-white py-3 fs-5 text-center w-100">Add Exam</a>
-            <a id="setting-btn" href="#/settings" class="text-white py-3 fs-5 text-center w-100">Settings</a>
-            <a id="logout-btn" href="#/" class="text-white py-3 fs-5 text-center w-100">Logout</a>
+            <a id="add-exam-btn" href="#/addExam" class="text-white py-3 fs-5 text-center w-100" data-link>Add Exam</a>
+            <a id="setting-btn" href="#/settings" class="text-white py-3 fs-5 text-center w-100" data-link>Settings</a>
+            <a id="logout-btn" href="#/" class="text-white py-3 fs-5 text-center w-100" data-link>Logout</a>
         </div>
     </div>
   `;
-  const addExamBtn = document.getElementById("add-exam-btn");
-  addExamBtn.addEventListener("click", (event) => {
-    event.preventDefault();
+
+  document.getElementById("add-exam-btn").addEventListener("click", (e) => {
+    e.preventDefault();
     window.location.hash = "#/addExam";
+    window.location.reload();
+  });
+  document.getElementById("exams-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.hash = "#/exams";
+    window.location.reload();
   });
 }
