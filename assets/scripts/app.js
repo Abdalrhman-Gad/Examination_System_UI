@@ -22,23 +22,24 @@ const routes = {
 };
 
 function loadRoute(hash) {
-  if (hash != "") {
+  if (hash !== "#/") {
     document.getElementById("login-page").style.display = "none";
     document.getElementById("main-page").style.display = "flex";
   } else {
-    document.getElementById("login-page").style.display = "flex"; //should ask to ensure the type of display
+    document.getElementById("login-page").style.display = "flex";
     document.getElementById("main-page").style.display = "none";
   }
+
   renderHeader();
-  renderSidebar();
+  renderSidebar(appContent); // Pass appContent to sidebar
   appContent.innerHTML = "";
 
   const path = hash || window.location.hash || "#/";
 
-  if (path.startsWith("#/products/")) {
-    const examId = hash.split("#/exams/")[1];
+  if (path.startsWith("#/exams/")) {
+    const examId = path.split("#/exams/")[1];
     if (examId) {
-      renderExam(productId);
+      renderExams(appContent, examId); // Updated function call
       return;
     }
   }
@@ -50,7 +51,7 @@ document.addEventListener("click", (e) => {
   if (e.target.matches("[data-link]")) {
     e.preventDefault();
     const href = e.target.getAttribute("href");
-    window.location.hash = href.replace("#", "");
+    window.location.hash = href; // Use the correct hash value
     loadRoute(href);
   }
 });

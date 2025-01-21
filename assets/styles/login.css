@@ -1,32 +1,15 @@
-body {
+.login-container {
     background-color: #1C59A1;
-
 }
 
-body h2 {
-    color: #1C59A1;
-
-}
-
-/* styles.css */
 .btn.btn-primary {
     background-color: #007bff;
-    /* Change to your desired color */
-
-    border: none;
-    /* Remove border */
     padding: 10px 20px;
-    /* Add padding */
     font-size: 16px;
-    /* Set font size */
     cursor: pointer;
-    /* Pointer cursor */
     border-radius: 5px;
-    /* Rounded corners */
 }
 
-/* Optional: Add hover effect */
 .btn.btn-primary:hover {
     background-color: #0056b3;
-    /* Darker shade on hover */
 }
