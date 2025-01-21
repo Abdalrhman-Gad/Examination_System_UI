@@ -12,6 +12,42 @@
 
 <body>
 
+    <form class="w-50 p-5" id="examForm">
+        <h2>Add Exam data</h2>
+        <br>
+        <!-- exam id -->
+        <div class="mb-3">
+            <input type="text" class="form-control" id="exam-id" placeholder="Exam Id">
+            <small class="text-danger d-none" id="examNameError">Please enter a valid exam name.</small>
+        </div>
+        <!-- question -->
+        <div class="mb-3">
+            <input type="text" class="form-control" id="qst" placeholder="Question">
+            <small class="text-danger d-none" id="startDatetimeError">Please select a valid start datetime.</small>
+        </div>
+        <!-- question type -->
+        <div class="mb-3">
+            <select id="qst-type" class="form-select" aria-label="Question type">
+                <option selected disabled>Select question type</option>
+                <option value="mcq">MCQ</option>
+                <option value="t/f">T/F</option>
+                <option value="text">Text</option>
+            </select>
+        </div>
+        <!-- allowance -->
+        <div class="mb-3">
+            <input type="text" class="form-control" id="allowance" placeholder="Allowance">
+            <small class="text-danger d-none" id="allowanceError">Please enter a valid allowance.</small>
+        </div>
+
+        <div id="qst-"></div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+
+    <script type="module" src="">
+
+    </script>
+
 
     </script>
 </body>
