@@ -22,7 +22,7 @@ const routes = {
 };
 
 function loadRoute(hash) {
-  if (hash !== "#/") {
+  if (hash !== "") {
     document.getElementById("login-page").style.display = "none";
     document.getElementById("main-page").style.display = "flex";
   } else {

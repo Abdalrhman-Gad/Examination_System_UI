@@ -9,7 +9,7 @@ export function renderHeader() {
   style="width: 50px"
 />
 <div class="links">
-  <a class="navbar-brand" href="/" id="home">Home</a>
+  <a class="navbar-brand"  id="home" href="/">Home</a>
   <a class="navbar-brand" id="services" href="/">Services</a>
   <a class="navbar-brand" id ="about" href="/">About Us</a>
 </div>
@@ -17,4 +17,20 @@ export function renderHeader() {
 
 </div>
 </nav>`;
+
+  document.getElementById("home").addEventListener("click", (event) => {
+    event.preventDefault();
+    
+    window.location.hash = "#/home";
+  });
+
+  document.getElementById("services").addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.hash = "#/services";
+
+  });
+  document.getElementById("about").addEventListener("click", (event) => {
+    event.preventDefault();
+    window.location.hash = "#/aboutus";
+  });
 }

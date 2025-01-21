@@ -1,4 +1,4 @@
 export function renderHome(mainContent) {
-  mainContent.hidden = false;
+ mainContent.innerHTML=`home`
   
 }

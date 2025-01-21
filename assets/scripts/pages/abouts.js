@@ -1,3 +1,3 @@
 export function renderAboutus(mainContent){
-mainContent.innerHtml=`<h1></`
+    mainContent.innerHTML=`about use`
 }
