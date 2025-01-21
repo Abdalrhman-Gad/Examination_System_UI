@@ -1,6 +1,8 @@
 export function renderAddExam(mainContent) {
   mainContent.innerHTML = `
-    <form class="w-25" id="examForm">
+    <form class="w-50 p-5" id="examForm">
+          <h2>Add Exam data</h2>
+          <br>
           <!-- exam name -->
           <div class="mb-3">
               <input type="text" class="form-control" id="exam-name" placeholder="Exam Name">
