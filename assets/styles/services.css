@@ -2,3 +2,30 @@
     margin-top: 30px;
     color: #1C59A1;
 }
+.s-description{
+    margin-top: 20px;
+    color: #1C59A1;
+    font-size: 20;
+}
+.sevices ul{
+   margin-top: 30px;
+    list-style: none;
+
+}
+.sevices ul li{
+    color: #1C59A1;
+    padding: 10px;
+    font-size: 20px;
+}
+.image{
+    
+    margin-left: auto;
+    margin-bottom: 50px;
+}
+.image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  
+
+}
