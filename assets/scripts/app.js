@@ -2,7 +2,7 @@ import { renderHome } from "./pages/home.js";
 import { renderAboutus } from "./pages/abouts.js";
 import { renderServices } from "./pages/services.js";
 import { renderLogin } from "./pages/login.js";
-import { renderAddExam } from "./pages/addexam.js";
+import { renderAddExam } from "./pages/addExam.js";
 import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
