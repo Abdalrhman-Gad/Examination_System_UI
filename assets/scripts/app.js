@@ -7,6 +7,7 @@ import { renderExams } from "./pages/exams.js";
 import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
 import { renderHeader } from "./components/header.js";
+import { renderFooter } from "./components/footer.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -32,6 +33,7 @@ function loadRoute(hash) {
 
   renderHeader();
   renderSidebar(appContent); // Pass appContent to sidebar
+  renderFooter();
   appContent.innerHTML = "";
 
   const path = hash || window.location.hash || "#/";

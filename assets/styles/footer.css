@@ -1,0 +1,28 @@
+#footer{
+margin-top: 20px;
+padding: 20px;  
+    background-color: #1C59A1;
+    color: white;
+}
+
+#footer h3{
+    font-size: 30 px;
+margin-bottom: 20px;
+}
+
+#footer p{
+   
+    font-size: 20px;
+    color: #eee;
+}
+
+.line{
+    height: 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: rgb(106, 101, 101);
+}
+
+.allrights{
+    text-align: end;
+}
