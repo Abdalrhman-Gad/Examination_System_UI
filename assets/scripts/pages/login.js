@@ -7,28 +7,30 @@ export function renderLogin(mainContent) {
   const loginPage = document.getElementById("login-page");
 
   loginPage.innerHTML = `
-  <div class="row m-0 vh-100 vw-100 justify-content-center align-content-center">
-        <div class="container w-50 h-75 rounded-2" style="background-color: #EEEE; padding: 100px;">
+  <div class="login-container vw-100 vh-100 p-0 m-0">
+        <div class="row m-0 vh-100 vw-100 justify-content-center align-content-center">
+            <div class="container w-50 h-75 rounded-2" style="background-color: #EEEE; padding: 100px;">
 
-            <h2>LOGIN</h2>
+                <h2>LOGIN</h2>
 
-            <br>
-
-            <form id="login-form">
-                <div class="mb-3">
-                    <label for="email-input" class="form-label">Email address</label>
-                    <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp">
-                    <div class="text-danger mt-1" id="email-error"></div>
-                </div>
-                <div class="mb-3">
-                    <label for="password-input" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password-input" minlength="8">
-                    <div class="text-danger mt-1" id="password-error"></div>
-                </div>
                 <br>
-                <button type="submit" class="btn btn-primary">Login</button>
-            </form>
 
+                <form id="login-form">
+                    <div class="mb-3">
+                        <label for="email-input" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email-input" aria-describedby="emailHelp">
+                        <div class="text-danger mt-1" id="email-error"></div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password-input" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password-input">
+                        <div class="text-danger mt-1" id="password-error"></div>
+                    </div>
+                    <br>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+
+            </div>
         </div>
     </div>
   `;
