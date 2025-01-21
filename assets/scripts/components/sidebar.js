@@ -10,7 +10,7 @@ export function renderSidebar(mainContent) {
                     align-items-center text-white h-75">
             <a id="exams-btn" href="#/exams" class="text-white fw-bold fs-5 py-3 text-center w-100">Exams</a>
             <a id="add-exam-btn" href="#/addExam" class="text-white py-3 fs-5 text-center w-100" data-link>Add Exam</a>
-            <a id="add-qst-btn" href="#/addExam" class="text-white py-3 fs-5 text-center w-100" data-link>Add Exam</a>
+            <a id="add-qst-btn" href="#/addExam" class="text-white py-3 fs-5 text-center w-100" data-link>Add Question</a>
             <a id="setting-btn" href="#/settings" class="text-white py-3 fs-5 text-center w-100" data-link>Settings</a>
             <a id="logout-btn" href="#/" class="text-white py-3 fs-5 text-center w-100" data-link>Logout</a>
         </div>
@@ -25,6 +25,5 @@ export function renderSidebar(mainContent) {
   document.getElementById("exams-btn").addEventListener("click", (e) => {
     e.preventDefault();
     window.location.hash = "#/exams";
-    window.location.reload();
   });
 }
