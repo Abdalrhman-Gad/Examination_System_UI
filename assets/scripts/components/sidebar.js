@@ -21,4 +21,9 @@ export function renderSidebar(mainContent) {
     window.location.hash = "#/addExam";
     window.location.reload();
   });
+  document.getElementById("exams-btn").addEventListener("click", (e) => {
+    e.preventDefault();
+    window.location.hash = "#/exams";
+    window.location.reload();
+  });
 }
