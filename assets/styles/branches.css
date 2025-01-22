@@ -1,0 +1,14 @@
+table caption {
+    caption-side: top;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #1C59A1;
+}
+
+tr:hover {
+    cursor: pointer;
+}
+
+.branches-container {
+    overflow-y: auto;
+}

@@ -22,6 +22,10 @@ export function renderAddExam(mainContent) {
           <div class="mb-3">
               <input type="text" class="form-control" id="allowance" placeholder="Allowance">
               <small class="text-danger d-none" id="allowanceError">Please enter a valid allowance.</small>
+          </div><!-- exam degree -->
+          <div class="mb-3">
+              <input type="number" class="form-control" id="exam-degree" placeholder="Exam degree">
+              <small class="text-danger d-none" id="examDegreeError">Please enter a valid exam degree.</small>
           </div>
           <!-- branch department track intake course instructor id -->
           <div class="mb-3">
@@ -72,6 +76,14 @@ export function renderAddExam(mainContent) {
       isValid = false;
       document.getElementById("allowanceError").classList.remove("d-none");
     }
+
+    // Validate exam degree
+    const examDegree = document.getElementById("exam-degree").value.trim();
+    if (!examDegree || examDegree <= 0) {
+      isValid = false;
+      document.getElementById("examDegreeError").classList.remove("d-none");
+    }
+    k;
 
     // Validate BDTICID
     const bdticid = document.getElementById("bdticid").value.trim();

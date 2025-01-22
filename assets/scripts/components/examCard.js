@@ -8,7 +8,7 @@ export function renderExamCard(imageUrl, examName) {
   card.innerHTML = `
         <img src="${imageUrl}" class="card-img-top"
             alt="exam Image">
-        <div class="card-body text-center">
+        <div class="card-body text-center align-content-center">
             <h5 class="card-title text-primary">${examName}</h5>
         </div>
   `;

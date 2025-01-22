@@ -7,7 +7,7 @@ export function renderExams(mainContent) {
   examCardsContainer.id = "container";
   examCardsContainer.className = "h-100 w-100 p-5";
 
-  for (let index = 0; index < 5; index++) {
+  for (let index = 0; index < 8; index++) {
     const element = renderExamCard(
       "https://campus.epam.am/static/news/255/self-study_03375353.png",
       "gad Script"

@@ -8,6 +8,7 @@ import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
 import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
+import { renderBranches } from "./pages/branches.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -19,6 +20,7 @@ const routes = {
   "#/addExam": renderAddExam,
   "#/home": renderHome,
   "#/forgetPassword": renderForgetPassword,
+  "#/branches": renderBranches,
   404: () => (appContent.innerHTML = `<h2>404 - page not found</h2>`),
 };
 
