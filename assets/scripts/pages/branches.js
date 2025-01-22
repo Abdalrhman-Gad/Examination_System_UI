@@ -80,7 +80,9 @@ function rowClicked(event, id) {
   const cellIndex = targetCell.cellIndex;
 
   if (cellIndex >= 0 && cellIndex < 3) {
-    alert("Row with ID " + id + " clicked!");
+    window.location.hash = `#/branches/departments?branchId=${encodeURIComponent(
+      id
+    )}`;
   }
 }
 
