@@ -8,6 +8,8 @@ import { renderForgetPassword } from "./pages/forgetPassword.js";
 import { renderSidebar } from "./components/sidebar.js";
 import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
+import { renderBranches } from "./pages/branches.js";
+import { renderDepartments } from "./pages/departments.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -19,6 +21,8 @@ const routes = {
   "#/addExam": renderAddExam,
   "#/home": renderHome,
   "#/forgetPassword": renderForgetPassword,
+  "#/branches": renderBranches,
+  "#/branches/departments": renderDepartments,
   404: () => (appContent.innerHTML = `<h2>404 - page not found</h2>`),
 };
 
@@ -42,6 +46,15 @@ function loadRoute(hash) {
     const examId = path.split("#/exams/")[1];
     if (examId) {
       renderExams(appContent, examId); // Updated function call
+      return;
+    }
+  }
+
+  if (path.startsWith("#/branches/departments")) {
+    const branchId = path.split("#/branches/departments?branchId=")[1];
+
+    if (branchId) {
+      renderDepartments(appContent, branchId); // Updated function call
       return;
     }
   }
