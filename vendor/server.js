@@ -25,10 +25,10 @@ const config = {
 app.use(express.static(path.join(__dirname)));
 
 // API endpoint to get exams
-app.get("/api/exams", async (req, res) => {
+app.get("/api/branches", async (req, res) => {
   try {
     await sql.connect(config);
-    const result = await sql.query`SELECT * FROM EXAM.EXAMS`;
+    const result = await sql.query`SELECT * FROM Organization.Branch`;
     res.json(result.recordset); // Send the result as JSON
   } catch (err) {
     console.error("Error:", err);

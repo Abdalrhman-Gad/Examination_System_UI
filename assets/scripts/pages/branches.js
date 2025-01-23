@@ -1,20 +1,10 @@
+import { OrganizationModel } from "../../../data/organizationModel.js";
 import { loadCSS } from "../utils/cssloader.js";
 
-export function renderBranches(mainContent) {
+export async function renderBranches(mainContent) {
   loadCSS("./assets/styles/branches.css");
 
-  const data = [
-    { Id: 1, Name: "ITI ASYUT", Location: "ASYUT" },
-    { Id: 2, Name: "ITI MINYA", Location: "MINYA" },
-    { Id: 3, Name: "ITI CAIRO", Location: "CAIRO" },
-    { Id: 4, Name: "ITI ALEX", Location: "ALEXANDRIA" },
-    { Id: 5, Name: "ITI SUEZ", Location: "SUEZ" },
-    { Id: 6, Name: "ITI LUXOR", Location: "LUXOR" },
-    { Id: 7, Name: "ITI QENA", Location: "QENA" },
-    { Id: 8, Name: "ITI ZAGAZIG", Location: "ZAGAZIG" },
-    { Id: 9, Name: "ITI FAYOUM", Location: "FAYOUM" },
-    { Id: 10, Name: "ITI MANSOURA", Location: "MANSOURA" },
-  ];
+  const branches = await OrganizationModel.fetchBranches(); // Use the static method
 
   mainContent.innerHTML = `
     <div class="branches-container container h-100 w-100 p-5">
@@ -38,7 +28,7 @@ export function renderBranches(mainContent) {
 
   const tableBody = document.getElementById("table-body");
 
-  for (const branch of data) {
+  for (const branch of branches) {
     const branchRow = document.createElement("tr");
 
     // Add row HTML
@@ -64,10 +54,12 @@ export function renderBranches(mainContent) {
     const deleteBtn = branchRow.querySelector(".delete-btn");
 
     updateBtn.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent row click event
       updateClicked(branch.Id);
     });
 
     deleteBtn.addEventListener("click", (event) => {
+      event.stopPropagation(); // Prevent row click event
       deleteClicked(branch.Id);
     });
   }

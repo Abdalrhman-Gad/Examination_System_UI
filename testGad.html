@@ -9,23 +9,23 @@
 
 <body>
     <h1>Exams List</h1>
-    <ul id="exams-list"></ul>
+    <ul id="branches-list"></ul>
 
     <script>
-        async function fetchExams() {
+        async function fetchBranches() {
             try {
                 // Corrected URL with http://
-                const response = await fetch('http://127.0.0.1:3000/api/exams');
+                const response = await fetch('http://127.0.0.1:3000/api/branches');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
-                const exams = await response.json();
-                const examsList = document.getElementById('exams-list');
+                const branches = await response.json();
+                const branchesList = document.getElementById('branches-list');
 
-                exams.forEach(exam => {
+                branches.forEach(branch => {
                     const listItem = document.createElement('li');
-                    listItem.textContent = `Exam ID: ${exam.Id}, Exam Name: ${exam.Total_Time}`; // Adjust based on your actual data structure
-                    examsList.appendChild(listItem);
+                    listItem.textContent = `ID: ${branch.Id}, Name: ${branch.Name}`; // Adjust based on your actual data structure
+                    branchesList.appendChild(listItem);
                 });
             } catch (error) {
                 console.error('Error fetching exams:', error);
@@ -33,7 +33,7 @@
         }
 
         // Call the function to fetch exams when the page loads
-        window.onload = fetchExams;
+        window.onload = fetchBranches;
     </script>
 </body>
 
