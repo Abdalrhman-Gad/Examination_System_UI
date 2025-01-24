@@ -9,7 +9,7 @@ import { renderSidebar } from "./components/sidebar.js";
 import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
 import { renderBranches } from "./pages/branches.js";
-import { renderDepartments } from "./pages/departments.js";
+import { renderDepartments } from "./pages/branchDepartments.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -22,7 +22,7 @@ const routes = {
   "#/home": renderHome,
   "#/forgetPassword": renderForgetPassword,
   "#/branches": renderBranches,
-  "#/branches/departments": renderDepartments,
+  // "#/branches/departments": renderDepartments,
   404: () => (appContent.innerHTML = `<h2>404 - page not found</h2>`),
 };
 

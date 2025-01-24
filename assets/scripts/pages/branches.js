@@ -1,10 +1,10 @@
-import { OrganizationModel } from "../../../data/organizationModel.js";
+import { BranchModel } from "../../../data/branchModel.js";
 import { loadCSS } from "../utils/cssloader.js";
 
 export async function renderBranches(mainContent) {
   loadCSS("./assets/styles/branches.css");
 
-  const branches = await OrganizationModel.fetchBranches(); // Use the static method
+  const branches = await BranchModel.fetchBranches(); // Use the static method
 
   mainContent.innerHTML = `
     <div class="branches-container container h-100 w-100 p-5">
@@ -79,7 +79,9 @@ function rowClicked(event, id) {
 }
 
 function updateClicked(id) {
-  alert("Update with ID " + id + " clicked!");
+  BranchModel.updateBrnach(11, "TEST FRONT", "TEST FRONT").then(
+    alert("updated")
+  );
 }
 
 function deleteClicked(id) {
