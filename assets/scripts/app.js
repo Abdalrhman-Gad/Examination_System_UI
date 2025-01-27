@@ -10,6 +10,7 @@ import { renderHeader } from "./components/header.js";
 import { renderFooter } from "./components/footer.js";
 import { renderBranches } from "./pages/branches.js";
 import { renderDepartments } from "./pages/branchDepartments.js";
+import { renderAddQustion } from "./pages/addQuestion.js";
 
 const appContent = document.getElementById("main-content");
 
@@ -19,6 +20,7 @@ const routes = {
   "#/aboutus": renderAboutus,
   "#/exams": renderExams,
   "#/addExam": renderAddExam,
+  '#/addquestion':renderAddQustion,
   "#/home": renderHome,
   "#/forgetPassword": renderForgetPassword,
   "#/branches": renderBranches,

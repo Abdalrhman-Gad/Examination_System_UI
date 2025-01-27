@@ -24,7 +24,7 @@
 
             try {
                 // Fetch exam questions
-                const questions = await ExamModel.fetchExamQuestions(4);
+                const questions = await ExamModel.fetchExamQuestions(10);
 
                 for (const question of questions) {
                     if (question.Type.trim() === 'CHOOSE') {

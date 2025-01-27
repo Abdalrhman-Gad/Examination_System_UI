@@ -151,6 +151,33 @@ app.get("/api/question/choices", async (req, res) => {
   }
 });
 
+app.get("/api/question/add", async (req, res) => {
+  const { } = req.query; // Get questionId from query parameters
+
+  if (!questionId) {
+    return res.status(400).send("questionId is required");
+  }
+
+  try {
+    await sql.connect(config);
+
+    // Query the Exam.Choices table using the provided questionId
+    const result =
+      await sql.query`SELECT * FROM Exam.Choices WHERE Question_Id = ${questionId}`;
+
+    // Check if any choices are returned
+    if (result.recordset.length === 0) {
+      return res.status(404).send("No choices found for the given questionId");
+    }
+
+    res.json(result.recordset); // Send the result as JSON
+  } catch (err) {
+    console.error("Error:", err);
+    res.status(500).send("Database error");
+  } finally {
+    sql.close(); // Always close the connection
+  }
+});
 // Start the server
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
