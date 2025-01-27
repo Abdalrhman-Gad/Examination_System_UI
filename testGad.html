@@ -4,37 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./vendor/bootstrap-5.3.3-dist/css/bootstrap.css">
     <title>Fetch Exams</title>
+    <style>
+
+    </style>
 </head>
 
-<body>
-    <h1>Exams List</h1>
-    <ul id="branches-list"></ul>
+<body class="p-5 ">
 
-    <script>
-        async function fetchBranches() {
+    <div id="con"></div>
+
+    <script type="module">
+        import { QuestionCard } from './assets/scripts/components/questionCard.js'
+        import { ExamModel } from './data/examModel.js'
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            const con = document.getElementById('con');
+
             try {
-                // Corrected URL with http://
-                const response = await fetch('http://127.0.0.1:3000/api/branches');
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                // Fetch exam questions
+                const questions = await ExamModel.fetchExamQuestions(4);
+
+                for (const question of questions) {
+                    if (question.Type.trim() === 'CHOOSE') {
+                        try {
+                            // Fetch choices for CHOOSE questions
+                            const choices = await ExamModel.fetchQuestionChoices(question.Q_Id);
+                            con.appendChild(QuestionCard.MCQCard(question.Q_Id, question.Q_Text, choices));
+                        } catch (error) {
+                            console.error(`Failed to fetch choices for question ID ${question.Q_Id}:`, error);
+                        }
+                    } else if (question.Type.trim() === 'TRUE OR FALSE') {
+                        con.appendChild(QuestionCard.TFCard(question.Q_Id, question.Q_Text));
+                    } else {
+                        con.appendChild(QuestionCard.TextCard(question.Q_Id, question.Q_Text));
+                    }
                 }
-                const branches = await response.json();
-                const branchesList = document.getElementById('branches-list');
-
-                branches.forEach(branch => {
-                    const listItem = document.createElement('li');
-                    listItem.textContent = `ID: ${branch.Id}, Name: ${branch.Name}`; // Adjust based on your actual data structure
-                    branchesList.appendChild(listItem);
-                });
             } catch (error) {
-                console.error('Error fetching exams:', error);
+                console.error("Failed to fetch exam questions:", error);
             }
-        }
-
-        // Call the function to fetch exams when the page loads
-        window.onload = fetchBranches;
+        });
     </script>
+
+    <script src="./vendor/bootstrap-5.3.3-dist/js/bootstrap.js"></script>
 </body>
 
 </html>
